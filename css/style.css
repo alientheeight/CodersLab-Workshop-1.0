@@ -21,3 +21,53 @@
   /*Others*/
   --desktop-page-width: 1352px;
 }
+
+/*General styles*/
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: var(--desktop-page-width);
+  margin: 0 auto;
+}
+
+.button {
+  width: 150px;
+  height: 50px;
+  border-radius: 35px;
+  font-family: var(--ff-main-font);
+  color: var(--color-white);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-bold);
+}
+
+.button--hero {
+  width: 440px;
+  height: 67px;
+  font-size: 1rem;
+}
+
+.button--contact {
+  width: 226px;
+  height: 57px;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+}
+
+.button--professional {
+  width: 165px;
+  box-shadow: 0 10px 14px var(--color-primary-shadow);
+}
+
+.button--basic {
+  background-color: var(--color-redish);
+}
+
+.button--premium {
+  background-color: var(--color-green);
+}
+
+/*Header [Logo + Navigation]*/
