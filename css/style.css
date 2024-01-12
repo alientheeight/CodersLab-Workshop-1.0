@@ -43,29 +43,28 @@ button {
   border: none;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-grey);
+}
+
 .container {
   width: var(--desktop-page-width);
   margin: 0 auto;
 }
 
-.container--flex {
+.header__container,
+.footer__container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.container--flex-centered {
+.contact__container {
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 114px;
-}
-.container--horizontal {
-  justify-content: space-between;
-  align-items: center;
-}
-
-.container--vertical {
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .button {
@@ -80,12 +79,6 @@ button {
   color: var(--color-white);
   font-size: 0.8125rem;
   font-weight: var(--fw-bold);
-}
-
-.button--hero {
-  width: 440px;
-  height: 67px;
-  font-size: 1rem;
 }
 
 .button--contact {
@@ -135,15 +128,12 @@ button {
 }
 
 .header__menu {
-}
-
-.menu__list {
   display: flex;
   align-items: center;
   gap: 80px;
 }
 
-.menu__item {
+.header__menu-item {
   display: flex;
   align-items: center;
   a {
@@ -184,6 +174,14 @@ button {
 
 .hero__motto {
   margin-bottom: 38px;
+}
+
+.hero__button {
+  width: 440px;
+  height: 67px;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  box-shadow: 0 10px 14px var(--color-primary-shadow);
 }
 
 .hero__bg-image {
@@ -295,11 +293,11 @@ button {
   border-radius: 5px;
 }
 
-.row--reverse {
+.benefits-list__row--reverse {
   flex-direction: row-reverse;
 }
 
-.row--last {
+.benefits-list__row--last {
   background-color: transparent;
   border: 0 solid transparent;
 }
@@ -441,7 +439,7 @@ button {
   margin-bottom: 100px;
 }
 
-.pricing-list__product {
+.price-box {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -452,13 +450,11 @@ button {
   &[data-type="basic"] {
     border: 1px solid var(--color-redish);
     .product-price {
-      color: var(--color-redish);
+      --accent-color: var(--color-redish);
     }
     .buy-plan {
-      background-color: var(--color-redish);
-      &:hover {
-        background-color: #b52a48;
-      }
+      --btn-accent-color: var(--color-redish);
+      --btn-accent-color-hover: #b52a48;
     }
   }
   &[data-type="professional"] {
@@ -467,14 +463,12 @@ button {
     min-width: 405px;
     box-shadow: 0 0 27px var(--color-primary-shadow);
     .product-price {
-      color: var(--color-primary);
+      --accent-color: var(--color-primary);
     }
     .buy-plan {
-      background-color: var(--color-primary);
+      --btn-accent-color: var(--color-primary);
+      --btn-accent-color-hover: #0083b0;
       box-shadow: 0 10px 14px var(--color-primary-shadow);
-      &:hover {
-        background-color: #0083b0;
-      }
     }
     .product-title {
       font-size: 21px;
@@ -483,13 +477,11 @@ button {
   &[data-type="premium"] {
     border: 1px solid var(--color-green);
     .product-price {
-      color: var(--color-green);
+      --accent-color: var(--color-green);
     }
     .buy-plan {
-      background-color: var(--color-green);
-      &:hover {
-        background-color: #399579;
-      }
+      --btn-accent-color: var(--color-green);
+      --btn-accent-color-hover: #399579;
     }
   }
   p {
@@ -499,7 +491,7 @@ button {
   }
 }
 
-.product-title {
+.price-box__title {
   font-family: var(--ff-title-font);
   font-weight: var(--fw-bold);
   font-size: 1.25rem;
@@ -507,32 +499,33 @@ button {
 }
 
 .product-price {
+  color: var(--accent-color);
   font-weight: var(--fw-light);
   font-size: 2.875rem;
   margin: 20px 0;
 }
-.product-properties-list {
+.price-box__properties-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 60px 0 40px;
 }
 
-.product-property {
+.price-box__product-property {
   display: flex;
   align-items: center;
   margin-bottom: 25px;
 
   &[data-type-prop="pros"]::before {
     content: "";
-    background: url("../assets/Checkmark-2.svg") no-repeat center / cover;
+    background: url("../assets/checkmark-2.svg") no-repeat center / cover;
     width: 14px;
     height: 14px;
     margin-right: 10px;
   }
   &[data-type-prop="cons"]::before {
     content: "";
-    background: url("../assets/Close.svg") no-repeat center / cover;
+    background: url("../assets/close.svg") no-repeat center / cover;
     width: 14px;
     height: 14px;
     margin-right: 10px;
@@ -542,7 +535,7 @@ button {
 .buy-plan {
   padding: 20px 60px;
   border-radius: 40px;
-  background-color: var(--color-light-grey);
+  background-color: var(--btn-accent-color);
   text-decoration: none;
   color: var(--color-white);
   font-weight: var(--fw-bold);
@@ -552,6 +545,9 @@ button {
   translate: 0 50%;
   display: inline-flex;
   transition: 0.3s;
+  &:hover {
+    background-color: var(--btn-accent-color-hover);
+  }
 }
 
 /*Contact*/
@@ -575,25 +571,28 @@ button {
   color: var(--color-grey);
 }
 
-.contact-data-item {
+.contact-data__item {
   display: flex;
   align-items: center;
 }
 
-.item--mail::before {
+.contact-data__item--mail::before {
   content: "";
   width: 27px;
   height: 27px;
-  background: url("../assets/Mail Icon.svg") no-repeat center / cover;
+  background: url("../assets/mail-icon.svg") no-repeat center / cover;
   margin-right: 10px;
 }
 
-.item--phone::before {
+.contact-data__item--phone::before {
   content: "";
   width: 27px;
   height: 27px;
-  background: url("../assets/Phone Icon.svg") no-repeat center / cover;
+  background: url("../assets/phone-icon.svg") no-repeat center / cover;
   margin-right: 10px;
+}
+
+.contact-data__link {
 }
 
 .column-contact {
@@ -653,7 +652,7 @@ button {
   }
 
   &:checked {
-    background: url("../assets/Checkmark.svg") no-repeat center;
+    background: url("../assets/checkmark.svg") no-repeat center;
   }
 }
 

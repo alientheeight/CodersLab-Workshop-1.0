@@ -23,14 +23,14 @@
   <body>
     <!--  Header: Logo + Menu-->
     <header class="header">
-      <div class="container container--flex container--horizontal">
+      <div class="header__container container">
         <a href="#" class="header__logo">BestShop</a>
-        <nav class="header__menu">
-          <ul class="menu__list">
-            <li class="menu__item"><a href="#why-us">Why Us</a></li>
-            <li class="menu__item"><a href="#benefits">Benefits</a></li>
-            <li class="menu__item"><a href="#prices">Prices</a></li>
-            <li class="menu__item"><a href="#contact">Contact</a></li>
+        <nav>
+          <ul class="header__menu">
+            <li class="header__menu-item"><a href="#why-us">Why Us</a></li>
+            <li class="header__menu-item"><a href="#benefits">Benefits</a></li>
+            <li class="header__menu-item"><a href="#prices">Prices</a></li>
+            <li class="header__menu-item"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -42,11 +42,11 @@
         <p class="hero__motto">
           Open shop on our platform and increase your sales
         </p>
-        <a href="#" class="button button--hero button--primary">
+        <a href="#" class="hero__button button">
           Open your shop
         </a>
         <img
-          src="/assets/Background.png"
+          src="/assets/background.png"
           class="hero__bg-image"
           alt="Widok z góry na Macbooka z dłońmi na klawiaturze, po lewej klendarz z długopisem i bileciki okazjonalne, po prawej iphone, filiżanka kawy i notes z długopisem"
         />
@@ -54,7 +54,7 @@
 
       <!--  Statistics section-->
       <section class="statistics" id="why-us">
-        <div class="container container--flex container--vertical">
+        <div class="container">
           <h2 class="statistics__title">
             The most popular sales platform in country
           </h2>
@@ -63,7 +63,7 @@
             <div class="statistics__item">
               <div class="statistics__item-image item-image--decoration-red">
                 <img
-                  src="./assets/Person.svg"
+                  src="assets/person.svg"
                   alt="Piktogram osoby - ramiona, szyja, głowa"
                 />
               </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="statistics__item">
               <div class="statistics__item-image item-image--decoration-blue">
-                <img src="./assets/Eye.svg" alt="Piktogram oka" />
+                <img src="assets/eye.svg" alt="Piktogram oka" />
               </div>
               <p class="statistics__item-count">2000000+</p>
               <p class="statistics__item-description">
@@ -82,7 +82,7 @@
             <div class="statistics__item">
               <div class="statistics__item-image item-image--decoration-green">
                 <img
-                  src="./assets/Catalog.svg"
+                  src="assets/catalog.svg"
                   alt="Piktogram folderu dokumentów"
                 />
               </div>
@@ -113,13 +113,13 @@
                 data-type-img="macbook"
               >
                 <img
-                  src="./assets/Macbook.png"
+                  src="assets/macbook.png"
                   alt="Fotografia laptopa Macbook"
                 />
               </div>
             </div>
 
-            <div class="benefits-list__row row--reverse">
+            <div class="benefits-list__row benefits-list__row--reverse">
               <div class="benefit-item-description">
                 <h2 class="benefit-item-description__title">
                   Your shop is<br />
@@ -141,7 +141,7 @@
                 />
               </div>
             </div>
-            <div class="benefits-list__row row--last">
+            <div class="benefits-list__row benefits-list__row--last">
               <div
                 class="benefit-item-description benefit-item-description--single"
               >
@@ -159,7 +159,7 @@
               </div>
               <div class="benefit-item-img benefit-item-img--single">
                 <img
-                  src="./assets/Trumpet.png"
+                  src="assets/trumpet.png"
                   alt="Fotografia telefonu iPhone"
                 />
               </div>
@@ -172,68 +172,68 @@
         <div class="container">
           <h2 class="pricing-title">Pricing</h2>
           <div class="pricing-list">
-            <div class="pricing-list__product" data-type="basic">
-              <h3 class="product-title">Basic</h3>
-              <span class="product-price product--basic">$0</span>
+            <div class="price-box" data-type="basic">
+              <h3 class="price-box__title">Basic</h3>
+              <span class="product-price">$0</span>
               <p>&nbsp;</p>
-              <ul class="product-properties-list">
-                <li class="product-property" data-type-prop="pros">
+              <ul class="price-box__properties-list">
+                <li class="price-box__product-property" data-type-prop="pros">
                   100 MB HDD
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   1 Subdomains
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   2 E-mails
                 </li>
-                <li class="product-property" data-type-prop="cons">
+                <li class="price-box__product-property" data-type-prop="cons">
                   Two years licence
                 </li>
-                <li class="product-property" data-type-prop="cons">
+                <li class="price-box__product-property" data-type-prop="cons">
                   Full support
                 </li>
               </ul>
               <a href="#" class="buy-plan plan--basic">Begin</a>
             </div>
-            <div class="pricing-list__product" data-type="professional">
-              <h3 class="product-title">Professional</h3>
-              <span class="product-price product--professional">$25</span>
+            <div class="price-box" data-type="professional">
+              <h3 class="price-box__title">Professional</h3>
+              <span class="product-price">$25</span>
               <p>Limited offer</p>
-              <ul class="product-properties-list">
-                <li class="product-property" data-type-prop="pros">
+              <ul class="price-box__properties-list">
+                <li class="price-box__product-property" data-type-prop="pros">
                   500 MB HDD
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   2 Subdomains
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   5 E-mails
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   One year licence
                 </li>
-                <li class="product-property" data-type-prop="cons">
+                <li class="price-box__product-property" data-type-prop="cons">
                   Full support
                 </li>
               </ul>
               <a href="#" class="buy-plan plan--professional">Begin</a>
             </div>
-            <div class="pricing-list__product" data-type="premium">
-              <h3 class="product-title">Premium</h3>
-              <span class="product-price product--premium">$60</span>
+            <div class="price-box" data-type="premium">
+              <h3 class="price-box__title">Premium</h3>
+              <span class="product-price">$60</span>
               <p>Limited offer</p>
-              <ul class="product-properties-list">
-                <li class="product-property" data-type-prop="pros">2 GB HDD</li>
-                <li class="product-property" data-type-prop="pros">
+              <ul class="price-box__properties-list">
+                <li class="price-box__product-property" data-type-prop="pros">2 GB HDD</li>
+                <li class="price-box__product-property" data-type-prop="pros">
                   5 Subdomains
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   20 E-mails
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   Two years licence
                 </li>
-                <li class="product-property" data-type-prop="pros">
+                <li class="price-box__product-property" data-type-prop="pros">
                   Full support
                 </li>
               </ul>
@@ -244,13 +244,13 @@
       </section>
       <!--Contact section-->
       <section class="contact" id="contact">
-        <div class="container container--flex container--flex-centered">
+        <div class="contact__container container container--flex container--flex-centered">
           <div class="column-info">
             <h2 class="contact-title">Any questions?</h2>
             <p>Leave your email address or call us!</p>
             <ul class="contact-data">
-              <li class="contact-data-item item--mail">info@bestshop.xyz</li>
-              <li class="contact-data-item item--phone">123 456 789</li>
+              <li class="contact-data__item contact-data__item--mail"><a href="" class="contact-data__link">info@bestshop.xyz</a></li>
+              <li class="contact-data__item contact-data__item--phone"><a href="" class="contact-data__link">123 456 789</a></li>
             </ul>
           </div>
           <div class="column-contact">
@@ -295,7 +295,7 @@
     </main>
     <!--  Footer-->
     <footer class="footer">
-      <div class="container container--flex container--horizontal">
+      <div class="footer__container container">
         <div class="footer__left-part">
           <a href="#" class="footer__logo-small">BestShop</a>
           <div class="footer__copyright">
@@ -305,13 +305,13 @@
         <div class="footer__right-part">
           <a href="https://twitter.com">
             <img
-              src="./assets/Twitter.svg"
+              src="assets/twitter.svg"
               alt="Twitter link"
               class="footer__social"
           /></a>
           <a href="https://facebook.com"
             ><img
-              src="./assets/Facebook.svg"
+              src="assets/facebook.svg"
               alt="Facebook link"
               class="footer__social"
           /></a>
